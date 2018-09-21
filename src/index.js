@@ -21,9 +21,6 @@ class Sorter {
 
   sort(indices) {
     var args = arguments[0];
-    /*for (var i = 0; i < arguments.length; i++) {
-      args[i] = arguments[0][i];
-    }*/
     console.log (args);
     var min = args[0], l = args.length;
     for (var i = 0; i < l; i++){
@@ -34,7 +31,7 @@ class Sorter {
     console.log (min);
     console.log (l);
     var temp = [];
-    temp = this.items.slice (min, l);
+    temp = this.items.slice (min, min+l);
     temp.sort();
     console.log (temp);
     for (var i = 0; i<temp.length; i++){
