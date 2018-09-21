@@ -20,18 +20,27 @@ class Sorter {
   }
 
   sort(indices) {
-     var min = arguments[0], l = arguments.length;
+    var args = arguments[0];
+    /*for (var i = 0; i < arguments.length; i++) {
+      args[i] = arguments[0][i];
+    }*/
+    console.log (args);
+    var min = args[0], l = args.length;
     for (var i = 0; i < l; i++){
-      if (arguments[i] < min){
-        min = arguments[i];
+      if (args[i] < min){
+        min = args[i];
       }
     }
-    var temp = this.items.slice (min, l);
+    console.log (min);
+    console.log (l);
+    var temp = [];
+    temp = this.items.slice (min, l);
     temp.sort();
+    console.log (temp);
     for (var i = 0; i<temp.length; i++){
-      this.items.splice(min+i, 1, temp[i]);
+      this.items.splice(min+i, 1, temp[i]); 
     }
-
+    console.log (this.items);
     return this.items;
     // your implementation
   }
